@@ -223,6 +223,12 @@ module BunnyMock
       warn '[DEPRECATED] `has_binding?` is deprecated. Please use `routes_to?` instead.'
       routes_to?(exchange_or_queue, opts)
     end
+    
+    def on_return(&block)
+      @on_return = block
+
+      self
+    end
 
     ##
     # Deliver a message to routes
